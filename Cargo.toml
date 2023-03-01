@@ -1,0 +1,20 @@
+[package]
+name = "bevy-uni-fun"
+version = "0.1.0"
+authors = ["bobscorn"]
+edition = "2018"
+resolver = "2"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+bevy = { version = "0.9.1", features = ["dynamic"] }
+
+# Enable a small amount of optimizations in debug mode:
+[profile.dev]
+opt-level = 1
+
+# Enable high level optimizations for dependencies (incl. Bevy), but not for our code:
+[profile.dev.package."*"]
+opt-level = 3
+

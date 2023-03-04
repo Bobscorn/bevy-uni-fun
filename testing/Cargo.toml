@@ -1,0 +1,10 @@
+[package]
+name = "testing"
+version = "0.1.0"
+edition = "2021"
+description = "Package used for testing and prototyping bevy stuff"
+workspace = "../"
+
+[dependencies]
+bevy.workspace = true
+

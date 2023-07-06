@@ -6,6 +6,7 @@ use bevy::{
 mod arrow;
 mod consts;
 mod types;
+mod sleep;
 use arrow::ArrowsPlugin;
 
 fn main() {
@@ -23,6 +24,7 @@ fn main() {
         }))
         .add_plugin(ArrowsPlugin)
         .add_startup_system(setup)
+        .add_system(sleep::sleep)
         .run();
 }
 

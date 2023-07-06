@@ -92,11 +92,11 @@ impl ArrowTime {
 pub fn load_config() -> SongConfig {
     SongConfig { 
         arrows:  vec![
-            ArrowTime::new(1., Speed::Slow, ArrowDirection::Up),
-            ArrowTime::new(2., Speed::Slow, ArrowDirection::Down),
-            ArrowTime::new(3., Speed::Slow, ArrowDirection::Left),
-            ArrowTime::new(4., Speed::Medium, ArrowDirection::Up),
-            ArrowTime::new(5., Speed::Fast, ArrowDirection::Down),
+            ArrowTime::new(1. as f64, Speed::Slow, ArrowDirection::Up),
+            ArrowTime::new(2. as f64, Speed::Slow, ArrowDirection::Down),
+            ArrowTime::new(3. as f64, Speed::Slow, ArrowDirection::Left),
+            ArrowTime::new(4. as f64, Speed::Medium, ArrowDirection::Up),
+            ArrowTime::new(5. as f64, Speed::Fast, ArrowDirection::Down),
         ]
     }
 }

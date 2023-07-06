@@ -24,6 +24,7 @@ struct ArrowMaterialResource {
 }
 fn load_arrows(mut arrows: ResMut<ArrowMaterialResource>, asset_server: Res<AssetServer>) {
     arrows.red_texture = asset_server.load("images/arrow_red.png");
+    println!("Loaded red arrow texture: {:?}", arrows.red_texture);
     arrows.blue_texture = asset_server.load("images/arrow_blue.png");
     arrows.green_texture = asset_server.load("images/arrow_green.png");
     arrows.border_texture = asset_server.load("images/arrow_border.png");
@@ -49,6 +50,8 @@ fn spawn_arrows(
 
     let mut remove_counter = 0;
     for arrow in &song_config.arrows {
+        println!("Elapsed time minus delta: {} and elapsed: {}", secs_last, secs);
+        println!("Arrow spawn time: {}", arrow.spawn_time);
 
         if secs_last < arrow.spawn_time && arrow.spawn_time < secs {
             remove_counter += 1;
@@ -71,6 +74,7 @@ fn spawn_arrows(
                 speed: arrow.speed,
                 direction: arrow.direction
             }));
+            println!("Spawned arrow with speed '{:?}' and direction '{:?}'", arrow.speed, arrow.direction);
         }
         else {
             break;
@@ -110,6 +114,7 @@ fn setup_target_arrows(mut commands: Commands, textures: Res<ArrowMaterialResour
                 ..default()
             }, TargetArrow)
         );
+        println!("Spawned target arrow");
     }
 }
 
